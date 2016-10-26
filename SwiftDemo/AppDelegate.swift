@@ -13,10 +13,17 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var testViewController: UINavigationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+          window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let mainviewcontroller:FirstViewController = FirstViewController(nibName: "FirstViewController", bundle:nil)
+        
+        testViewController = UINavigationController(rootViewController: mainviewcontroller)
+        
+        window?.rootViewController = testViewController;
+        window?.makeKeyAndVisible()
         return true
     }
 
